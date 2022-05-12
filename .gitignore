@@ -1,2 +1,9 @@
-/node_modules
+node_modules
+build
+.vscode
+.DS_STORE
+.env
+tmp
+.nyc_output
+package-lock.json
 yarn-error.log
