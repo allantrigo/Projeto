@@ -9,9 +9,6 @@ export default class User extends BaseModel {
   public name: string
 
   @column()
-  public active: boolean
-
-  @column()
   public email: string
 
   @column()
