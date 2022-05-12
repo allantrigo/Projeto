@@ -1,6 +1,15 @@
 {
     "name": "projeto",
     "version": "1.0.0",
+    "scripts": {
+        "build": "node ace build --production",
+        "start": "node server.js",
+        "dev": "node ace serve --watch",
+        "lint": "eslint . --ext=.ts",
+        "format": "prettier --write .",
+        "prepare:db": "node ace migration:run && node ace db:seed",
+        "prepare:migration": "node ace migration:run"
+    },
     "dependencies": {
         "@adonisjs/auth": "^8.1.0",
         "@adonisjs/core": "^5.7.6",
