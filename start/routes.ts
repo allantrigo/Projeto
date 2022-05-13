@@ -23,3 +23,12 @@ import Route from '@ioc:Adonis/Core/Route'
  * Auth route
  */
 Route.post('/auth/login', 'AuthController.login')
+
+/**
+ * User route
+ */
+Route.post('/users/create', 'UsersController.create')
+Route.patch('/users/update', 'UsersController.updateById')
+Route.get('/users/read', 'UsersController.readById')
+Route.get('/users/readAll', 'UsersController.readAll')
+Route.delete('/users/delete', 'UsersController.delete')
