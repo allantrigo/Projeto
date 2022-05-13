@@ -54,7 +54,7 @@ const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
               port: Env.get('POSTGRES_PORT'),
               user: Env.get('POSTGRES_USER'),
               password: Env.get('POSTGRES_PASSWORD'),
-              database: Env.get('POSTGRES_DB_NAME') + '_' + Env.get('NODE_ENV'),
+              database: Env.get('POSTGRES_DB_NAME'),
             },
 
       healthCheck: false,
