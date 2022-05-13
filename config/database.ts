@@ -6,7 +6,6 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import { OrmConfig } from '@ioc:Adonis/Lucid/Orm'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 import { parse } from 'pg-connection-string'
 
@@ -19,7 +18,7 @@ if (dbUrl !== undefined) {
   connection = conn
 }
 
-const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
+const databaseConfig: DatabaseConfig = {
   /*
   |--------------------------------------------------------------------------
   | Connection
@@ -61,20 +60,6 @@ const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
       debug: false,
     },
   },
-
-  /*
-  |--------------------------------------------------------------------------
-  | ORM Configuration
-  |--------------------------------------------------------------------------
-  |
-  | Following are some of the configuration options to tweak the conventional
-  | settings of the ORM. For example:
-  |
-  | - Define a custom function to compute the default table name for a given model.
-  | - Or define a custom function to compute the primary key for a given model.
-  |
-  */
-  orm: {},
 }
 
 export default databaseConfig

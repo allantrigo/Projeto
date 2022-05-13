@@ -1,6 +1,6 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { LucidModel } from '@ioc:Adonis/Lucid/Model'
-import GenericValidator from '@pd-solucoes/generic-validator-adonisjs5'
+import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
+import GenericValidator from './GenericValidator'
 
 export default abstract class GenericController<V extends GenericValidator, M extends LucidModel> {
   constructor(
