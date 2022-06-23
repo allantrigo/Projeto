@@ -1,6 +1,14 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, BaseModel, beforeSave, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  column,
+  BaseModel,
+  beforeSave,
+  hasMany,
+  HasMany,
+  afterFind,
+  afterFetch,
+} from '@ioc:Adonis/Lucid/Orm'
 import Purchase from './Purchase'
 
 export default class User extends BaseModel {
@@ -36,7 +44,21 @@ export default class User extends BaseModel {
   }
 
   @hasMany(() => Purchase, {
-    foreignKey: 'purchase_id',
+    foreignKey: 'user_id',
   })
   public purchases: HasMany<typeof Purchase>
+
+  @afterFind()
+  public static async findById(user: User) {
+    await user.load('purchases')
+  }
+
+  @afterFetch()
+  public static async findAll(users: User[]) {
+    const promise = users.map(async (user) => {
+      return await user.load('purchases')
+    })
+
+    await Promise.all(promise)
+  }
 }
