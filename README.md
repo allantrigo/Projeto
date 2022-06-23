@@ -68,7 +68,75 @@ Com esse comando rodando é possível realizar chamadas na API. Para importar a 
 A partir disso, basta realizar o login com o administrador pela primeira vez e a partir disso é possível criar usuários que poderão utilizar o sistema.
 
 # Estrutura
-teste
+Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
+
+📂Projeto-C214-Grupo-1/
+
+    📂app/
+        📂Controllers/
+            📂Http/
+                📄AuthController.ts
+                📄UsersController.ts
+        📂Exceptions/
+            📄Handler.ts
+        📂Generic/
+            📄GenericController.ts
+            📄GenericValidator
+        📂Middleware/
+            📄Auth.ts
+            📄SilentAuth.ts
+        📂Models/
+            📄User.ts
+        📂Validators/
+            📄AuthValidator.ts
+            📄UserValidator.ts
+    📂commands/
+        📄index.ts
+    📂config/
+        📄app.ts
+        📄auth.ts
+        📄bodyparser.ts
+        📄cors.ts
+        📄database.ts
+        📄hash.ts
+    📂contracts/
+        📄auth.ts
+        📄env.ts
+        📄events.ts
+        📄hash.ts
+    📂database/
+        📂migrations/
+            📄1_users.ts
+            📄2_api_tokens.ts
+        📂seeders/
+            📄User.ts
+    📂docs/
+        📂readme_images/
+            📄insomnia.png
+            📄logo_readme.png
+        📄Insomnia_2022-05-12.json
+    📂providers/
+        📄AppProvider.ts
+    📂start/
+        📄kernel.ts
+        📄routes.ts
+    📄.adonisrc.json
+    📄.editorconfig
+    📄.eslintignore
+    📄.eslintrc.json
+    📄.gitignore
+    📄.prettierignore
+    📄.prettierrc
+    📄ace
+    📄ace-manifest.json
+    📄docker-compose.yml
+    📄env.ts
+    📄package.json
+    📄README.md
+    📄server.ts
+    📄tsconfig.json
+    📄yarn.lock
+
 
 # Desenvolvido por
 ## - [Allan Trigo](https://github.com/allantrigo/)
