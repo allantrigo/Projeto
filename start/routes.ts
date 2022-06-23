@@ -27,7 +27,7 @@ Route.post('/auth/login', 'AuthController.login')
 /**
  * User route
  */
-Route.post('/user/create', 'UsersController.create')
+Route.post('/users/create', 'UsersController.create')
 Route.patch('/users/update', 'UsersController.updateById')
 Route.get('/users/read', 'UsersController.readById')
 Route.get('/users/readAll', 'UsersController.readAll')
