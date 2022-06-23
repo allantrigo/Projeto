@@ -81,7 +81,7 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
             📄Handler.ts
         📂Generic/
             📄GenericController.ts
-            📄GenericValidator
+            📄GenericValidator.ts
         📂Middleware/
             📄Auth.ts
             📄SilentAuth.ts
@@ -137,8 +137,20 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
     📄tsconfig.json
     📄yarn.lock
 
+# 🛠️ Construído com
 
-# Desenvolvido por
+**IDE**: [Visual Studio Code](https://code.visualstudio.com/)
+
+**Linguagem**: [TypeScript](https://www.typescriptlang.org/), [AdonisJS](https://adonisjs.com/)
+
+**Gerenciamento de dependências**: [yarn](https://yarnpkg.com/)
+
+**Controle de versões**: [GitHub](https://github.com/)
+
+**Framework de teste**: [JestJs](https://jestjs.io/pt-BR/)
+
+
+# 💻 Desenvolvido por
 ## - [Allan Trigo](https://github.com/allantrigo/)
 ## - [Jessian Ribeiro](https://github.com/JessianCRB)
 ## - [Henrique Mateus](https://github.com/HenriqueMAlves)
