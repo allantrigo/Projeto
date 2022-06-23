@@ -5,10 +5,10 @@ export default class PurchaseValidator extends GenericValidator {
   public create() {
     let createdSchema = schema.create({
       user_id: schema.number([rules.exists({ table: 'users', column: 'id' })]),
-      purchase: schema.array().members(
-        schema.object([rules.minLength(1)]).members({
+      purchases: schema.array([rules.minLength(1)]).members(
+        schema.object().members({
           product_id: schema.number([rules.exists({ table: 'products', column: 'id' })]),
-          amount: schema.number([rules.minLength(0)]),
+          amount: schema.number(),
         })
       ),
     })

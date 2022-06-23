@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { column, BaseModel, computed, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
+import { column, BaseModel, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Product from './Product'
 
 export default class Purchase extends BaseModel {
@@ -15,10 +15,8 @@ export default class Purchase extends BaseModel {
   @column()
   public amount: number
 
-  @computed()
-  public get total() {
-    return this.amount * this.product.price
-  }
+  @column()
+  public total: number
 
   @column({ serializeAs: null })
   public password: string
