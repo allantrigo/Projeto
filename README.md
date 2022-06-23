@@ -1,15 +1,22 @@
 <h1 align="center">Projeto C214-L6 Grupo 1 - AdonisJS</h1> 
 
-Projeto desenvolvido usando o AdonisJS e Docker para representar um estoque.
+<p align="center">
+<img src="https://github.com/allantrigo/projeto-c214-grupo-1/tree/master/docs/readme_images/logo_readme.png" height="300" width="300" >
+</p>
+<p align="center">Figura 1 - Logo do projeto</p>
 
-## Funcionalidades
+A nossa aplicação trata-se de um sistema com a premissa de representar um estoque, o mesmo sendo desenvolvido usando o AdonisJS e Docker.
+
+Desenvolvido para a matéria de Engenharia de Software-(C214), de modo a usar todos os conceitos aprendidos durante as aulas ministradas.
+
+## 💻 Funcionalidades
 - Login
 - Cadastro de Usuário
 
-# Ambiente
+# 🌳 Ambiente
 Para executar o projeto é necessário possuir o [Node LTS](https://nodejs.org/en/download/) instalado assim como o [Docker](https://docs.docker.com/desktop/windows/install/).
 
-# Instalação
+# 🔧 Instalação
 Para instalar o projeto, primeiro é necessário realizar a clonagem dele. Para cloná-lo basta executar o comando de clonagem:
 ```
 git clone https://github.com/allantrigo/projeto-c214-grupo-1.git
@@ -36,7 +43,7 @@ POSTGRES_DB_NAME=postgres
 VARCHAR_MAX_LENGTH=255
 ```
 
-# Preparando o banco
+# 🔨 Preparando o banco
 Com as dependências instaladas, é necessário preparar também o banco. Após abrir o Docker, use o seguinte comando para criar a imagem no Docker:
 ```
 yarn db:up
@@ -48,7 +55,7 @@ Uma vez que o banco de dados estiver montado, é necessário criar o esquema com
 yarn prepare:db
 ```
 
-# Iniciando o Server
+# 🚀 Iniciando o Server
 Uma vez que o banco esteja devidamente configurado é possível iniciar o servidor localmente usando o comando
 ```
 yarn dev
@@ -59,6 +66,9 @@ Com esse comando rodando é possível realizar chamadas na API. Para importar a 
 ![](/docs/readme_images/insomnia.png)
 
 A partir disso, basta realizar o login com o administrador pela primeira vez e a partir disso é possível criar usuários que poderão utilizar o sistema.
+
+# Estrutura
+teste
 
 # Desenvolvido por
 ## - [Allan Trigo](https://github.com/allantrigo/)
