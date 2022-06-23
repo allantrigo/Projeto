@@ -27,8 +27,26 @@ Route.post('/auth/login', 'AuthController.login')
 /**
  * User route
  */
-Route.post('/users/create', 'UsersController.create')
+Route.post('/user/create', 'UsersController.create')
 Route.patch('/users/update', 'UsersController.updateById')
 Route.get('/users/read', 'UsersController.readById')
 Route.get('/users/readAll', 'UsersController.readAll')
 Route.delete('/users/delete', 'UsersController.delete')
+
+/**
+ * Products route
+ */
+Route.post('/products/create', 'ProductsController.create')
+Route.patch('/products/update', 'ProductsController.updateById')
+Route.get('/products/read', 'ProductsController.readById')
+Route.get('/products/readAll', 'ProductsController.readAll')
+Route.delete('/products/delete', 'ProductsController.delete')
+
+/**
+ * Purchase route
+ */
+Route.post('/purchases/sale', 'PurchasesController.create')
+Route.patch('/purchases/update', 'PurchasesController.updateById')
+Route.get('/purchases/read', 'PurchasesController.readById')
+Route.get('/purchases/readAll', 'PurchasesController.readAll')
+Route.delete('/purchases/delete', 'PurchasesController.delete')
