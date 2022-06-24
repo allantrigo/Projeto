@@ -53,7 +53,7 @@ const databaseConfig: DatabaseConfig = {
               port: Env.get('POSTGRES_PORT'),
               user: Env.get('POSTGRES_USER'),
               password: Env.get('POSTGRES_PASSWORD'),
-              database: Env.get('POSTGRES_DB_NAME'),
+              database: Env.get('POSTGRES_DB_NAME') + '_' + Env.get('NODE_ENV'),
             },
 
       healthCheck: false,
