@@ -11,16 +11,13 @@ export default abstract class ValidatePurchase {
         const product = await Product.findOrFail(purchase.product_id)
         if (product.amount < purchase.amount) {
           failed = true
-          console.log(failed)
           failedProduct = product
         }
         total = total + product.price * purchase.amount
       })
     )
 
-    console.log(failed)
     if (failed && failedProduct) {
-      console.log('Aqui')
       throw new Error('Invalid Product Amount ' + failedProduct.name)
     }
 
