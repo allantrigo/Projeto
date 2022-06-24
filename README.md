@@ -1,3 +1,5 @@
+[![CI](https://github.com/allantrigo/projeto-c214-grupo-1/actions/workflows/node.js.yml/badge.svg)](https://github.com/allantrigo/projeto-c214-grupo-1/actions/workflows/node.js.yml)
+
 <h1 align="center">Projeto C214-L6 Grupo 1 - AdonisJS</h1> 
 
 Projeto desenvolvido usando o AdonisJS e Docker para representar um estoque.
