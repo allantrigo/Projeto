@@ -16,6 +16,7 @@ export default class UserValidator extends GenericValidator {
       password: schema.string({ trim: true }, [
         rules.maxLength(parseInt(Env.get('VARCHAR_MAX_LENGTH'))),
       ]),
+      balance: schema.number.optional(),
     })
 
     return createdSchema
@@ -35,6 +36,7 @@ export default class UserValidator extends GenericValidator {
       password: schema.string.optional({ trim: true }, [
         rules.maxLength(parseInt(Env.get('VARCHAR_MAX_LENGTH'))),
       ]),
+      balance: schema.number.optional(),
     })
 
     return createdSchema

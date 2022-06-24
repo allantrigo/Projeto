@@ -1,6 +1,15 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, BaseModel, beforeSave } from '@ioc:Adonis/Lucid/Orm'
+import {
+  column,
+  BaseModel,
+  beforeSave,
+  hasMany,
+  HasMany,
+  afterFind,
+  afterFetch,
+} from '@ioc:Adonis/Lucid/Orm'
+import Purchase from './Purchase'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -14,6 +23,9 @@ export default class User extends BaseModel {
 
   @column()
   public admin: boolean
+
+  @column()
+  public balance: number
 
   @column({ serializeAs: null })
   public password: string
@@ -29,5 +41,24 @@ export default class User extends BaseModel {
     if (user.$dirty.password) {
       user.password = await Hash.make(user.password)
     }
+  }
+
+  @hasMany(() => Purchase, {
+    foreignKey: 'user_id',
+  })
+  public purchases: HasMany<typeof Purchase>
+
+  @afterFind()
+  public static async findById(user: User) {
+    await user.load('purchases')
+  }
+
+  @afterFetch()
+  public static async findAll(users: User[]) {
+    const promise = users.map(async (user) => {
+      return await user.load('purchases')
+    })
+
+    await Promise.all(promise)
   }
 }

@@ -1,0 +1,59 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master", "develop" ]
+  pull_request:
+    branches: [ "master", "develop" ]
+
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    container: node:latest
+
+    services:
+      postgres:
+        image: postgres:12.5-alpine
+        env:
+          HOST: 0.0.0.0
+          PORT: 80
+          NODE_ENV: testing
+          APP_KEY: Sd84vuP7IzmTCvi0ud-2LgrHvhrU7CGC
+          DB_CONNECTION: pg
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: aquagen-admin
+          POSTGRES_PASSWORD: aquagen-admin
+          POSTGRES_DB: aquagen_testing
+          POSTGRES_DB_NAME: aquagen
+          VARCHAR_MAX_LENGTH: 255
+          
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: yarn
+        
+      - name: Run tests
+        env:
+          HOST: 0.0.0.0
+          PORT: 80
+          NODE_ENV: testing
+          APP_KEY: Sd84vuP7IzmTCvi0ud-2LgrHvhrU7CGC
+          DB_CONNECTION: pg
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: aquagen-admin
+          POSTGRES_PASSWORD: aquagen-admin
+          POSTGRES_DB: aquagen_testing
+          POSTGRES_DB_NAME: aquagen
+          VARCHAR_MAX_LENGTH: 255
+        run: yarn test:ci
+        
+      - name: After
+        run: npx nyc report --reporter=text-summary
+      
+      
+      
+      

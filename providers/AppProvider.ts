@@ -14,7 +14,6 @@ export default class AppProvider {
   public async ready() {
     // App is ready
     const Route = this.app.container.use('Adonis/Core/Route')
-    console.log(Route.toJSON())
   }
 
   public async shutdown() {
