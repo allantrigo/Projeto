@@ -7,3 +7,4 @@ tmp
 .nyc_output
 package-lock.json
 yarn-error.log
+test\coverage
