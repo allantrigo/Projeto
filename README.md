@@ -3,7 +3,7 @@
 <h1 align="center">Projeto C214-L6 Grupo 1 - AdonisJS</h1> 
 
 <p align="center">
-<img src="https://github.com/allantrigo/projeto-c214-grupo-1/tree/master/docs/readme_images/logo_readme.png" height="300" width="300" >
+<img src="docs/readme_images/logo_readme.png" height="300" width="450" >
 </p>
 <p align="center">Figura 1 - Logo do projeto</p>
 
@@ -14,6 +14,8 @@ Desenvolvido para a matéria de Engenharia de Software-(C214), de modo a usar to
 ## 💻 Funcionalidades
 - Login
 - Cadastro de Usuário
+- Cadastro de Produtos
+- Vendas
 
 # 🌳 Ambiente
 Para executar o projeto é necessário possuir o [Node LTS](https://nodejs.org/en/download/) instalado assim como o [Docker](https://docs.docker.com/desktop/windows/install/).
@@ -79,6 +81,8 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
             📂Http/
                 📄AuthController.ts
                 📄UsersController.ts
+                📄ProductsController.ts
+                📄PurchasesController.ts
         📂Exceptions/
             📄Handler.ts
         📂Generic/
@@ -89,9 +93,13 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
             📄SilentAuth.ts
         📂Models/
             📄User.ts
+            📄Products.ts
+            📄Purchases.ts
         📂Validators/
             📄AuthValidator.ts
             📄UserValidator.ts
+            📄ProductsValidator.ts
+            📄PurchasesValidator.ts
     📂commands/
         📄index.ts
     📂config/
@@ -110,18 +118,27 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
         📂migrations/
             📄1_users.ts
             📄2_api_tokens.ts
+            📄3_products.ts
+            📄2_purchases.ts
         📂seeders/
             📄User.ts
     📂docs/
         📂readme_images/
             📄insomnia.png
             📄logo_readme.png
-        📄Insomnia_2022-05-12.json
+        📄insomnia_collection.json
     📂providers/
         📄AppProvider.ts
     📂start/
         📄kernel.ts
         📄routes.ts
+    📂test/
+        📂controllers/
+            📄users.spect.ts
+            📄products.spec.ts
+            📄purchases.spec.ts
+        📂services/
+            📄validadePurchase.spec.ts
     📄.adonisrc.json
     📄.editorconfig
     📄.eslintignore
@@ -138,6 +155,15 @@ Segue o esboço em que está idealizado toda a estrutura de nosso projeto:
     📄server.ts
     📄tsconfig.json
     📄yarn.lock
+
+# 🚀 Tests
+É possível rodar testes usando o comando ```yarn test```, ele rodará testes que serão executados em um banco local que deve ser criado junto ao de desenvolvimento chamado ```postgres_testing```.
+
+Porém, para rodar mostrando a coverage é possível utilizar o comando:
+```
+yarn test:ci
+```
+Esse comando irá criar uma pasta coverage, dentro da pasta de testes, onde é possível observar a coverage do projeto.
 
 # 🛠️ Construído com
 
